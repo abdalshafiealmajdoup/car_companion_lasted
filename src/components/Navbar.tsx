@@ -43,15 +43,16 @@ function Navbar() {
               <li> <button className="btn-login"><Link className="nav-link btn btn-primary scrollto btn-login-link" to="/choose-logins">تسجيل الدخول</Link></button></li>
               </>
             )}
+
             {tokenCustomer && (
-              
-              
-              <li> <button className="btn btn-primary" onClick={handleLogout}>تسجيل الخروج</button></li>  
+              <>
+              <li> <button className="btn btn-primary m-2 " onClick={handleLogout}>تسجيل الخروج</button></li>  
+              <li> <button className="btn btn-primary " > <a className='m-0 p-0' href="/customer/profile">حسابي</a></button></li>  
+              </>
             )}
             
-
           </ul>
-          <i className="bi bi-list mobile-nav-toggle"></i>
+
         </nav>
 
 </div>

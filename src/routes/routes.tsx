@@ -2,7 +2,7 @@
 import { HomePage, ChooseLoginsPage, LoginGestUserPage, LoginMaintenanceCenterUserPage, RegisterGestUserPage, RegisterMaintenanceCenterUserPage, 
   ForgotPasswordMaintenanceCenterPage, ForgotPasswordGestUserPage ,ClientInterfacePage,ServiceRequestPage,ConfirmServiceRequestPage,
   RequestSuccessPage,ListMaintenanceRequestsPage,RequestProcessingPage,
-  SettingsMaintenancePage,RegisterAdminPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
+  SettingsMaintenancePage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
   import { ProtectedRoute } from "../components";
 const routesConfig = [
   //Admin
@@ -39,6 +39,9 @@ const routesConfig = [
   { path: "/confirm-service-request", element: <ProtectedRoute element={ConfirmServiceRequestPage} /> },
   { path: "/request-success", element: <ProtectedRoute element={RequestSuccessPage} /> },
   { path: "/confirm-service-request/:serviceName", element: <ProtectedRoute element={ConfirmServiceRequestPage} /> },
+  { path: "/customer/profile", element: ProfileCustomerPage },
+  { path: "/admin/contacts", element: ContactUsPage },
+
 ];
 
 export default routesConfig;

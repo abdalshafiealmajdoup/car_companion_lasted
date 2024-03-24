@@ -31,5 +31,7 @@ export { default as ListMaintenanceRequests } from "./ListMaintenanceRequests";
 export { default as SettingsMaintenance } from "./SettingsMaintenance";
 export { default as ProfileAdmin } from "./ProfileAdmin";
 export { default as ProfileMaintenance } from "./ProfileMaintenance";
+export { default as ContactUS } from "./ContactUS";
+export { default as ProfileCustomer } from "./ProfileCustomer";
 export * from "./design";
 

@@ -6,6 +6,7 @@ import citiesReducer from './slices/citiesSlice';
 import OrderRequestSlice from './slices/OrderRequestSlice';
 import ServiceCenter from './slices/ServiceCenter';
 import AdminSlice from './slices/AdminSlice';
+import ContactSlice from './slices/ContactSlice';
 
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     orders: OrderRequestSlice,
     serviceCenters: ServiceCenter,
     admins: AdminSlice,
+    contacts: ContactSlice,
 
 });
 

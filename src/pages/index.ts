@@ -13,11 +13,13 @@ export { default as OrderListAdminPage } from "./OrderListAdminPage";
 export { default as SettingsAdminPage } from "./SettingsAdminPage";
 export { default as ProfileAdminPage } from "./ProfileAdminPage";
 export { default as ProfileMaintenancePage } from "./ProfileMaintenancePage";
+export { default as ProfileCustomerPage } from "./ProfileCustomerPage";
 
 
 export { default as ListMaintenanceRequestsPage } from "./ListMaintenanceRequestsPage";
 export { default as RequestProcessingPage } from "./RequestProcessingPage";
 export { default as SettingsMaintenancePage } from "./SettingsMaintenancePage";
+export { default as ContactUsPage } from "./ContactUsPage";
 export * from "./Auth";
 
 

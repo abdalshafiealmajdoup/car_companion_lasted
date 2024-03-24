@@ -85,6 +85,20 @@ export const logoutCustomer = createAsyncThunk(
     }
   }
 );
+export const updateCustomer = createAsyncThunk(
+  'customers/updateCustomer',
+  async (customerData: Customer, { rejectWithValue }) => {
+    try {
+      const token = localStorage.getItem('tokenCustomer');
+      const response = await axios.put(`http://localhost:8000/api/customers/${customerData.id}`, customerData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 export const deleteCustomer = createAsyncThunk(
   'customers/deleteCustomer',
   async (CustomerID: number, { rejectWithValue }) => {
@@ -146,6 +160,17 @@ const customerSlice = createSlice({
       state.tokenCustomer = action.payload.access_token; 
     })
     .addCase(loginCustomer.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload as string;
+    }).addCase(updateCustomer.fulfilled, (state, action: PayloadAction<Customer>) => {
+      const updatedCustomer = action.payload;
+      const index = state.customers.findIndex(customer => customer.id === updatedCustomer.id);
+      if (index !== -1) {
+        state.customers[index] = updatedCustomer;
+      }
+      state.status = 'succeeded';
+    })
+    .addCase(updateCustomer.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.payload as string;
     })

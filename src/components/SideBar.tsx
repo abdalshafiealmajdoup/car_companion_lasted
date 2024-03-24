@@ -59,7 +59,9 @@ const Sidebar = () => {
             <NavLink exact to="/admin/profile" activeClassName="activeClicked">
               <CDBSidebarMenuItem  icon="user"> الملف الشخصي</CDBSidebarMenuItem>
             </NavLink>
-            
+            <NavLink exact to="/admin/contacts" activeClassName="activeClicked">
+              <CDBSidebarMenuItem  icon="user">الإستفسارات</CDBSidebarMenuItem>
+            </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
         <CDBSidebarFooter style={{ textAlign: 'center' }}>
