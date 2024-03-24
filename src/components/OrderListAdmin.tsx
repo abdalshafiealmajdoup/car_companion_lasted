@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOrders,deleteOrder } from "../store/slices/OrderRequestSlice"; 
 import Swal from 'sweetalert2';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 function formatDateString(dateString) {
   const date = new Date(dateString);
   let hours = date.getHours();
   const minutes = date.getMinutes().toString().padStart(2, '0');
   const ampm = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  hours = hours ? hours : 12;
   const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${hours}:${minutes} ${ampm}`;
   return formattedDate;
 }
@@ -40,6 +42,76 @@ function OrderListAdmin() {
       }
     });
   };
+  const printOrders = () => {
+    const tableHtml = document.querySelector('.table-responsive').outerHTML;
+    const html = `
+      <html>
+        <head>
+          <title>طباعة الطلبات</title>
+          <style>
+            table { border-collapse: collapse; width: 100%; }
+            th, td { border: 1px solid black; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+          </style>
+        </head>
+        <body>
+          ${tableHtml}
+        </body>
+      </html>
+    `;
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(html);
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+  };
+  
+  const downloadPdfDocument = () => {
+    const input = document.getElementById('pdfTableContainer');
+    if (input) {
+   
+      const actionColumns = input.querySelectorAll('.action-column'); 
+      actionColumns.forEach(col => col.style.display = 'none');
+  
+      html2canvas(input, { scale: 2 })
+      .then((canvas) => {
+        actionColumns.forEach(col => col.style.display = ''); 
+  
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'landscape',
+          unit: 'px',
+          format: 'a4'
+        });
+  
+        const imgProps= pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save("download.pdf");
+      })
+      .catch(error => {
+        actionColumns.forEach(col => col.style.display = ''); 
+        console.error("Error generating PDF: ", error);
+      });
+    } else {
+      console.error("Element with ID 'pdfTableContainer' not found.");
+    }
+  };
+  
+useEffect(() => {
+  if (document.getElementById('pdfTableContainer')) {
+  }
+}, []);
+useEffect(() => {
+  // تحقق من وجود العنصر قبل تنفيذ الكود
+  if (document.getElementById('pdfTableContainer')) {
+    // العنصر موجود، يمكنك الآن تنفيذ الكود لتحميل الPDF
+  } else {
+    console.error("Element with ID 'pdfTableContainer' not found.");
+  }
+}, []);
   return (
     <div className="p-4 w-100">
       <div className="p-4 border border-2 rounded">
@@ -47,9 +119,13 @@ function OrderListAdmin() {
           <div className="bg-white shadow-sm rounded overflow-hidden">
             <div className="d-flex align-items-center p-3">
               <h2 className="text-primary fw-bold">قائمة الطلبات</h2>
+              <button className="btn btn-success m-1 " onClick={printOrders}>طباعة البيانات </button>
+              <button  className="btn btn-success m-1" onClick={downloadPdfDocument}>تحميل البيانات PDF</button>
+
+
             </div>
 
-            <div className="table-responsive">
+            <div className="table-responsive" id="pdfTableContainer">
               <table className="table text-right text-sm">
                 <thead>
                   <tr>
@@ -63,7 +139,7 @@ function OrderListAdmin() {
                     <th>المنطقة</th>
                     <th>ملاحظات</th>
                     <th>تاريخ الإنشاء</th>
-                    <th>الإجراءات</th>
+                    <th className="action-column">الإجراءات</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -80,10 +156,10 @@ function OrderListAdmin() {
                       <td>{order.CustomerNotes}</td>
                       <td>{formatDateString(order.created_at)}</td>
 
-                      <td className="d-flex justify-content-end">
+                      <td className="d-flex justify-content-end action-column" >
                         {/* <button className="btn btn-primary me-1 m-1">عرض</button>
                         <button className="btn btn-warning me-1 m-1">تعديل</button> */}
-                        <button className="btn btn-danger m-1" onClick={() => handleDelete(order.OrderID)}>حذف</button>
+                        <button  className="btn btn-danger m-1 action-column" onClick={() => handleDelete(order.OrderID)}>حذف</button>
                       </td>
                     </tr>
                   ))}
