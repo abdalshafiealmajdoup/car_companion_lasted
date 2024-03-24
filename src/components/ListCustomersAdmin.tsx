@@ -2,7 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCustomers ,deleteCustomer} from "../store/slices/CustomerSlice"; 
 import Swal from 'sweetalert2';
-
+function formatDateString(dateString) {
+  const date = new Date(dateString);
+  let hours = date.getHours();
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${hours}:${minutes} ${ampm}`;
+  return formattedDate;
+}
 function ListCustomersAdmin() {
     const dispatch = useDispatch();
     const { customers, status, error } = useSelector((state) => state.customers);
@@ -47,6 +56,8 @@ function ListCustomersAdmin() {
                                     <th>الاسم</th>
                                     <th>الهاتف</th>
                                     <th>البريد الإلكتروني</th>
+                                    <th>تاريخ الإنشاء</th>
+                                    <th>تاريخ التحديث</th>
                                     <th>الإجراءات</th>
 
                                 </tr>
@@ -58,6 +69,8 @@ function ListCustomersAdmin() {
                                         <td>{customer.Name}</td>
                                         <td>{customer.Phone}</td>
                                         <td>{customer.Email}</td>
+                                        <td>{formatDateString(customer.created_at)}</td>
+                                            <td>{formatDateString(customer.updated_at)}</td>
                                         <td className="d-flex justify-content-end">
                               {/* <button className="btn btn-primary me-1 m-1">عرض</button>
                               <button className="btn btn-warning me-1 m-1">تعديل</button> */}

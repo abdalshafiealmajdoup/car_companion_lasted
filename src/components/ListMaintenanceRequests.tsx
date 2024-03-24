@@ -3,7 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchOrders, deleteOrder, updateOrder } from "../store/slices/OrderRequestSlice";
 import Swal from 'sweetalert2';
 import { fetchCities } from "../store/slices/citiesSlice";
-
+function formatDateString(dateString) {
+  const date = new Date(dateString);
+  let hours = date.getHours();
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${hours}:${minutes} ${ampm}`;
+  return formattedDate;
+}
 import {
   fetchCarTypes,
   selectAllCarTypes,
@@ -111,8 +120,8 @@ function ListMaintenanceRequests() {
                     <th>الخدمة المطلوبة</th>
                     <th>المدينة</th>
                     <th>المنطقة</th>
-
                     <th>ملاحظات</th>
+                    <th>تاريخ الإنشاء</th>
                     <th>الإجراءات</th>
 
                   </tr>
@@ -129,6 +138,8 @@ function ListMaintenanceRequests() {
                       <td>{order.City}</td>
                       <td>{order.Region}</td>
                       <td>{order.CustomerNotes}</td>
+                      <td>{formatDateString(order.created_at)}</td>
+
                       <td className="d-flex justify-content-end">
                         <button className="btn btn-primary me-1 m-1">عرض</button>
                         <button className="btn btn-warning me-1 m-1" data-bs-toggle="modal" data-bs-target="#editOrderModal" onClick={() => handleEdit(order)}>تعديل</button>                     

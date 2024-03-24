@@ -2,7 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllAdmins,deleteAdmin } from "../store/slices/AdminSlice"; 
 import Swal from 'sweetalert2';
-
+function formatDateString(dateString) {
+    const date = new Date(dateString);
+    let hours = date.getHours();
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${hours}:${minutes} ${ampm}`;
+    return formattedDate;
+  }
 function SettingsMaintenance() {
     const dispatch = useDispatch();
     const { list: admins, status, error } = useSelector((state) => state.admins); 
@@ -46,6 +55,8 @@ function SettingsMaintenance() {
                                         <th>#</th>
                                         <th>الاسم</th>
                                         <th>البريد الإلكتروني</th>
+                                    <th>تاريخ الإنشاء</th>
+                                    <th>تاريخ التحديث</th>
                                         <th>الإجراءات</th>
                                     </tr>
                                 </thead>
@@ -55,6 +66,8 @@ function SettingsMaintenance() {
                                             <th scope="row">{index + 1}</th>
                                             <td>{admin.Name}</td>
                                             <td>{admin.Email}</td>
+                                            <td>{formatDateString(admin.created_at)}</td>
+                                            <td>{formatDateString(admin.updated_at)}</td>
                                             <td className="d-flex justify-content-end">
                                                 {/* <button className="btn btn-primary me-1 m-1">عرض</button>
                                                 <button className="btn btn-warning me-1 m-1">تعديل</button> */}

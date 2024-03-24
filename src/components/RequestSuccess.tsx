@@ -111,7 +111,8 @@ function RequestSuccess() {
                         <th scope="col">نوع الطلب</th>
                         <th scope="col">حالة الطلب</th>
                         <th scope="col">تكلفة الطلب</th>
-                        <th scope="col">تاريخ الطلب</th>
+                        <th scope="col">تاريخ إنشاء الطلب</th>
+                        <th scope="col">تاريخ تعديل الطلب</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -123,6 +124,8 @@ function RequestSuccess() {
       <td>{getStatusNameByKey(order.StatusOrder)}</td>
       <td>{getServiceCostById(order.ServiceID)}</td>
       <td>{formatDateString(order.created_at)}</td>
+      <td>{formatDateString(order.updated_at)}</td>
+
     </tr>
   ))}
 </tbody>

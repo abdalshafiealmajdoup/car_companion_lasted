@@ -2,6 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchServiceCenters,deleteServiceCenter } from "../store/slices/ServiceCenter"; 
 import Swal from 'sweetalert2';
+function formatDateString(dateString) {
+    const date = new Date(dateString);
+    let hours = date.getHours();
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${hours}:${minutes} ${ampm}`;
+    return formattedDate;
+  }
 function ServiceCenterListAdmin() {
   const dispatch = useDispatch();
   const { serviceCenters, status, error } = useSelector((state) => state.serviceCenters);
@@ -52,6 +62,9 @@ function ServiceCenterListAdmin() {
                                     <th>البريد الإلكتروني</th>
                                     <th>المدينة</th>
                                     <th>الخدمات المقدمة</th>
+                    <th>تاريخ الإنشاء</th>
+                    <th>تاريخ التحديث</th>
+
                                     <th>الإجراءات</th>
                                 </tr>
                             </thead>
@@ -64,6 +77,9 @@ function ServiceCenterListAdmin() {
                                         <td>{center.Email}</td>
                                         <td>{center.City}</td>
                                         <td>{center.services_list}</td>
+                                        <td>{formatDateString(center.created_at)}</td>  
+                                        <td>{formatDateString(center.updated_at)}</td>
+
                                         <td className="d-flex justify-content-end">
                         {/* <button className="btn btn-primary me-1 m-1">عرض</button>
                         <button className="btn btn-warning me-1 m-1">تعديل</button> */}
