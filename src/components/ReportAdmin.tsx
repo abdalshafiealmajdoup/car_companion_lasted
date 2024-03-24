@@ -41,7 +41,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a ref="/admin/order-list-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -64,7 +64,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a href="/admin/order-list-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -87,7 +87,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a ref="/admin/order-list-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -110,7 +110,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a href="/admin/settings-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -133,7 +133,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a href="dmin/list-customers-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -157,7 +157,7 @@ function ReportAdmin() {
             </div>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/younes-elmorabit" target="_blank">
+        <a href="admin/maintenance-centers-admin" target="_blank">
           <div class="card-footer bg-light text-info">
             <span class="float-left">عرض الكل</span>
             <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
