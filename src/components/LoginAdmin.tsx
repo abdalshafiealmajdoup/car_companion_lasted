@@ -37,7 +37,7 @@ function LoginAdmin() {
       await dispatch(loginAdmin({ Email: formData.Email, Password: formData.Password })).unwrap();
       Swal.fire("تم تسجيل الدخول بنجاح!", "أهلاً بعودتك إلى لوحة التحكم.", "success").then((result) => {
         if (result.isConfirmed) {
-          navigate("/admin/maintenance-centers-admin"); 
+          navigate("/admin/report"); 
         }
       });
     } catch (error) {

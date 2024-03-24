@@ -33,5 +33,6 @@ export { default as ProfileAdmin } from "./ProfileAdmin";
 export { default as ProfileMaintenance } from "./ProfileMaintenance";
 export { default as ContactUS } from "./ContactUS";
 export { default as ProfileCustomer } from "./ProfileCustomer";
+export { default as ReportAdmin } from "./ReportAdmin";
 export * from "./design";
 

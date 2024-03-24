@@ -41,8 +41,8 @@ const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
       
-            <NavLink exact to="/admin/order-list-admin" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="columns">الصفحة الرئيسية </CDBSidebarMenuItem>
+            <NavLink exact to="/admin/report" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns"> الإحصائيات </CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/admin/order-list-admin" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">قائمة الطلبات</CDBSidebarMenuItem>

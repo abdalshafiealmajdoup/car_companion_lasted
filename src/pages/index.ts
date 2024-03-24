@@ -20,6 +20,8 @@ export { default as ListMaintenanceRequestsPage } from "./ListMaintenanceRequest
 export { default as RequestProcessingPage } from "./RequestProcessingPage";
 export { default as SettingsMaintenancePage } from "./SettingsMaintenancePage";
 export { default as ContactUsPage } from "./ContactUsPage";
+export { default as ReportAdminPage } from "./ReportAdminPage";
+
 export * from "./Auth";
 
 

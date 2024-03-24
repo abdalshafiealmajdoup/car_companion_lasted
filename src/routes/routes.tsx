@@ -2,7 +2,7 @@
 import { HomePage, ChooseLoginsPage, LoginGestUserPage, LoginMaintenanceCenterUserPage, RegisterGestUserPage, RegisterMaintenanceCenterUserPage, 
   ForgotPasswordMaintenanceCenterPage, ForgotPasswordGestUserPage ,ClientInterfacePage,ServiceRequestPage,ConfirmServiceRequestPage,
   RequestSuccessPage,ListMaintenanceRequestsPage,RequestProcessingPage,
-  SettingsMaintenancePage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
+  SettingsMaintenancePage,ReportAdminPage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
   import { ProtectedRoute } from "../components";
 const routesConfig = [
   //Admin
@@ -13,6 +13,7 @@ const routesConfig = [
   { path: "admin/order-list-admin", element: OrderListAdminPage },
   { path: "admin/settings-admin", element: SettingsAdminPage },
   { path: "admin/profile", element: ProfileAdminPage },
+  { path: "admin/report", element: ReportAdminPage },
 
 //maintenance center
   { path: "/register-maintenance-center-user", element: RegisterMaintenanceCenterUserPage },
