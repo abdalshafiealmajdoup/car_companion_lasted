@@ -1,0 +1,25 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 50px 100px;
+  }
+  
+  .hero-content {
+    flex: 1;
+    text-align: right;
+    color: white;
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+  

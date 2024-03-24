@@ -1,0 +1,177 @@
+{
+    "cities": [{
+            "id": 1,
+            "name": "طرابلس",
+            "key": "tripoli",
+            "areas": [{
+                    "id": 101,
+                    "name": "أبو سليم",
+                    "key": "abu_salim",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 102,
+                    "name": "عين زارة",
+                    "key": "ain_zara",
+                    "addresIdMap":"https://www.google.com/maps?q=R779+XHH,+Ain+Zara"
+                },
+                {
+                    "id": 103,
+                    "name": "الأندلس",
+                    "key": "andalus",
+                    "addresIdMap":"https://www.google.com/maps?q=V5RP+GGF,+Independence+St,+Tripoli"
+                },
+                {
+                    "id": 104,
+                    "name": "طرابلس المركز",
+                    "key": "tripoli_center",
+                    "addresIdMap":"https://www.google.com/maps?q=V7G8+C6,+Tajoura"
+                },
+                {
+                    "id": 105,
+                    "name": "حي الأندلس",
+                    "key": "hay_al_andalus",
+                    "addresIdMap":"https://www.google.com/maps?q=R9H2+FCJ,+Beer+Osta+Milad+Rd,+Tajoura"
+                },
+                {
+                    "id": 106,
+                    "name": "سوق الجمعة",
+                    "key": "suq_al_jumaa",
+                    "addresIdMap":"https://www.google.com/maps?q=R43F+CW4,+شارع+ولي+العهد,+Tripoli"
+                },
+                {
+                    "id": 107,
+                    "name": "تاجوراء",
+                    "key": "tajura",
+                    "addresIdMap":"https://www.google.com/maps?q=R399+68H,+شارع+السفارات،+طرابلس،،,+Janzur"
+                },
+                {
+                    "id": 108,
+                    "name": "الحدائق",
+                    "key": "al_hadaeq",
+                    "addresIdMap":"https://www.google.com/maps?q=P348+WG2,+Janzur"
+                },
+                {
+                    "id": 109,
+                    "name": "الفرناج",
+                    "key": "al_firnaj",
+                    "addresIdMap":"https://www.google.com/maps?q=P348+WG2,+Janzur"
+                },
+                {
+                    "id": 110,
+                    "name": "جنزور",
+                    "key": "janzur",
+                    "addresIdMap":"https://www.google.com/maps?q=P348+WG2,+Janzurm"
+                },
+                {
+                    "id": 111,
+                    "name": "السراج",
+                    "key": "al_sarraj",
+                    "addresIdMap":"https://www.google.com/maps?q=P348+WG2,+Janzur"
+                },
+                {
+                    "id": 112,
+                    "name": "السواني",
+                    "key": "al_sawani",
+                    "addresIdMap":"https://www.google.com/maps?q=P348+WG2,+Janzur"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "بنغازي",
+            "key": "benghazi",
+            "areas": [{
+                    "id": 201,
+                    "name": "البركة",
+                    "key": "al_baraka",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 202,
+                    "name": "الفويهات",
+                    "key": "al_fuwayhat",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 203,
+                    "name": "الكيش",
+                    "key": "al_keish",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 204,
+                    "name": "الليثي",
+                    "key": "al_lithi",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 205,
+                    "name": "الماجوري",
+                    "key": "al_majuri",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 206,
+                    "name": "الهواري",
+                    "key": "al_hawari",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 207,
+                    "name": "بوهديمة",
+                    "key": "buhedima",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 208,
+                    "name": "حي السلام",
+                    "key": "hai_al_salam",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "مصراتة",
+            "key": "misrata",
+            "areas": [{
+                    "id": 301,
+                    "name": "الضمان",
+                    "key": "al_daman",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 302,
+                    "name": "زاوية المحجوب",
+                    "key": "zawiat_al_mahjoub",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 303,
+                    "name": "طمينة",
+                    "key": "tammina",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 304,
+                    "name": "الغيران",
+                    "key": "al_ghiran",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 305,
+                    "name": "المنصورة",
+                    "key": "al_mansoura",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                },
+                {
+                    "id": 306,
+                    "name": "بنينا",
+                    "key": "benina",
+                    "addresIdMap":"https://www.google.com/maps?q=v67m+592+abu_salim"
+                }
+            ]
+        }
+    ]
+}
