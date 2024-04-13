@@ -2,7 +2,7 @@
 import { HomePage, ChooseLoginsPage, LoginGestUserPage, LoginMaintenanceCenterUserPage, RegisterGestUserPage, RegisterMaintenanceCenterUserPage, 
   ForgotPasswordMaintenanceCenterPage, ForgotPasswordGestUserPage ,ClientInterfacePage,ServiceRequestPage,ConfirmServiceRequestPage,
   RequestSuccessPage,ListMaintenanceRequestsPage,RequestProcessingPage,
-  SettingsMaintenancePage,ReportAdminPage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
+  SettingsMaintenancePage,ReportAdminPage,ForgotPasswordPage,verifyOtpPage,ResetPasswordCusomerPage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
   import { ProtectedRoute } from "../components";
 const routesConfig = [
   //Admin
@@ -42,6 +42,9 @@ const routesConfig = [
   { path: "/confirm-service-request/:serviceName", element: <ProtectedRoute element={ConfirmServiceRequestPage} /> },
   { path: "/customer/profile", element: ProfileCustomerPage },
   { path: "/admin/contacts", element: ContactUsPage },
+  { path: "/forgot-password-customer", element: ForgotPasswordPage },
+  { path: "/verify-otp-customer", element: verifyOtpPage },
+  { path: "/reset-password-customer", element: ResetPasswordCusomerPage },
 
 ];
 

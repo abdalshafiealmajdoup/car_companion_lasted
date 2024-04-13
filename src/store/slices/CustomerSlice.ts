@@ -113,6 +113,41 @@ export const deleteCustomer = createAsyncThunk(
     }
   }
 );
+export const forgetPassword = createAsyncThunk(
+  'customers/forgetPassword',
+  async (phone: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/customers/forgot-password', { Phone: phone });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const verifyOTP = createAsyncThunk(
+  'customers/verifyOTP',
+  async (otpData: { Phone: string; otp: string }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/customers/verify-otp', otpData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const resetPassword = createAsyncThunk(
+  'customers/resetPassword',
+  async (resetData: { Phone: string; new_password: string }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/customers/reset-password', resetData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 const customerSlice = createSlice({
   name: 'customers',
@@ -189,6 +224,43 @@ const customerSlice = createSlice({
     .addCase(logoutCustomer.fulfilled, (state) => {
       state.tokenCustomer = null; 
       state.status = 'idle';
+    })
+    .addCase(forgetPassword.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(forgetPassword.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      // Handle any further state updates if necessary
+    })
+    .addCase(forgetPassword.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload as string;
+    })
+
+    // Verify OTP
+    .addCase(verifyOTP.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(verifyOTP.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      // Handle successful verification
+    })
+    .addCase(verifyOTP.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload as string;
+    })
+
+    // Reset Password
+    .addCase(resetPassword.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(resetPassword.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      // Optional: Clear customer data or update state
+    })
+    .addCase(resetPassword.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload as string;
     });
   },
 });

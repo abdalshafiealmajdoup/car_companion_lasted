@@ -21,7 +21,8 @@ export { default as RequestProcessingPage } from "./RequestProcessingPage";
 export { default as SettingsMaintenancePage } from "./SettingsMaintenancePage";
 export { default as ContactUsPage } from "./ContactUsPage";
 export { default as ReportAdminPage } from "./ReportAdminPage";
+export { default as verifyOtpPage } from "./VerifyOtpPage";
+export { default as ForgotPasswordPage } from "./ForgotPasswordPage";
+export { default as ResetPasswordCusomerPage } from "./ResetPasswordCusomerPage";
 
 export * from "./Auth";
-
-

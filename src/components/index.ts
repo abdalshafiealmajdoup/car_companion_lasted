@@ -34,5 +34,8 @@ export { default as ProfileMaintenance } from "./ProfileMaintenance";
 export { default as ContactUS } from "./ContactUS";
 export { default as ProfileCustomer } from "./ProfileCustomer";
 export { default as ReportAdmin } from "./ReportAdmin";
+export { default as ForgotPassword } from "./ForgotPassword";
+export { default as ResetPasswordCusomer } from "./ResetPasswordCusomer";
+export { default as VerifyOtpCu } from "./VerifyOtpCu";
 export * from "./design";
 

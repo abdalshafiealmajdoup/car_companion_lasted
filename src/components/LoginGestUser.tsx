@@ -108,6 +108,8 @@ function RegisterGestUser() {
                         <br />
                         <p> ليس لديك حساب : <strong><Link to="/register-gest-user"> إنشاء حساب جديد
               </Link> </strong></p>
+                        <p> هل نسيت كلمة المرور : <strong><Link to="/forgot-password-customer"> تعديل كلمة المرور
+              </Link> </strong></p>
                       </form>
                     </div>
                   </div>
