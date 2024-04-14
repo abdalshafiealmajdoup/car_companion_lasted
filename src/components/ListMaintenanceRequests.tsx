@@ -109,7 +109,9 @@ return (
   <div className="p-4 w-100">
     <div className="p-4 border border-2 rounded">
       <section className="bg-light p-3">
+        
         <div className="bg-white shadow-sm rounded overflow-hidden">
+          
           <div className="d-flex align-items-center p-3">
             <h2 className="text-primary fw-bold">قائمة الطلبات</h2>
           </div>

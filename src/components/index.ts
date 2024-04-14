@@ -37,5 +37,6 @@ export { default as ReportAdmin } from "./ReportAdmin";
 export { default as ForgotPassword } from "./ForgotPassword";
 export { default as ResetPasswordCusomer } from "./ResetPasswordCusomer";
 export { default as VerifyOtpCu } from "./VerifyOtpCu";
+export { default as ListMaintenanceNotifications } from "./ListMaintenanceNotifications";
 export * from "./design";
 

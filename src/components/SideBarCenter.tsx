@@ -42,6 +42,9 @@ const SideBarCenter = () => {
             {/* <NavLink exact to="/maintenance-center/request-processing" activeClassName="activeClicked"> */}
               {/* <CDBSidebarMenuItem icon="columns"> معالجة الطلبات </CDBSidebarMenuItem> */}
             {/* </NavLink> */}
+            <NavLink exact to="/maintenance-center/list-Notifications" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns">الإشعارات <i class="bi bi-bell-fill"></i></CDBSidebarMenuItem>
+            </NavLink>
             <NavLink exact to="/maintenance-center/list-maintenance-requests" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns"> قائمة الطلبات</CDBSidebarMenuItem>
             </NavLink>

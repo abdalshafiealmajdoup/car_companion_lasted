@@ -24,5 +24,6 @@ export { default as ReportAdminPage } from "./ReportAdminPage";
 export { default as verifyOtpPage } from "./VerifyOtpPage";
 export { default as ForgotPasswordPage } from "./ForgotPasswordPage";
 export { default as ResetPasswordCusomerPage } from "./ResetPasswordCusomerPage";
+export { default as ListNotificationsPage } from "./ListNotificationsPage";
 
 export * from "./Auth";

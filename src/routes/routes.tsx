@@ -2,7 +2,7 @@
 import { HomePage, ChooseLoginsPage, LoginGestUserPage, LoginMaintenanceCenterUserPage, RegisterGestUserPage, RegisterMaintenanceCenterUserPage, 
   ForgotPasswordMaintenanceCenterPage, ForgotPasswordGestUserPage ,ClientInterfacePage,ServiceRequestPage,ConfirmServiceRequestPage,
   RequestSuccessPage,ListMaintenanceRequestsPage,RequestProcessingPage,
-  SettingsMaintenancePage,ReportAdminPage,ForgotPasswordPage,verifyOtpPage,ResetPasswordCusomerPage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
+  SettingsMaintenancePage,ReportAdminPage,ForgotPasswordPage,verifyOtpPage,ListNotificationsPage,ResetPasswordCusomerPage,ContactUsPage,RegisterAdminPage,ProfileCustomerPage,ProfileMaintenancePage ,LoginAdminPage,MaintenanceCentersAdminPage,ListCustomersAdminPage,OrderListAdminPage,SettingsAdminPage,ProfileAdminPage} from "../pages";
   import { ProtectedRoute } from "../components";
 const routesConfig = [
   //Admin
@@ -21,6 +21,7 @@ const routesConfig = [
   { path: "/forgot-password-maintenance-center", element: ForgotPasswordMaintenanceCenterPage },
   { path: "/maintenance-center/request-processing", element: RequestProcessingPage },
   { path: "/maintenance-center/list-maintenance-requests", element: ListMaintenanceRequestsPage },
+  { path: "/maintenance-center/list-Notifications", element: ListNotificationsPage },
   { path: "/maintenance-center/settings-maintenance", element: SettingsMaintenancePage },
   { path: "/maintenance-center/profile", element: ProfileMaintenancePage },
 
