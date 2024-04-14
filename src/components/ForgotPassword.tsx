@@ -43,11 +43,11 @@ function ForgotPassword() {
   };
 
   return (
-    <section className="d-flex align-items-center">
+    <section className="d-flex align-items-center m-4">
       <div className="container position-relative">
         <div className="row justify-content-center">
-          <div className="col-xl-7 col-lg-9 text-center">
-            <h3>نسيت كلمة المرور</h3>
+          <div className="col-xl-7 col-lg-9 text-center m-4">
+            <h3>إعادة تعيين كلمة المرور</h3>
           </div>
         </div>
         <div className="register-style">
@@ -64,7 +64,7 @@ function ForgotPassword() {
                 />
                 {error && <div style={{ color: 'red', fontSize: 'small' }}>{error}</div>}
               </div>
-              <input type="submit" className="btnRegister btnr" value="إرسال رابط إعادة تعيين" />
+              <input type="submit" className="btnRegister btnr" value="إرسال رمز التحقق" />
             </form>
           </div>
         </div>

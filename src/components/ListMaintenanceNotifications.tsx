@@ -30,6 +30,15 @@ function ListMaintenanceNotifications() {
     newHiddenCards.set(orderId, !newHiddenCards.get(orderId));
     setHiddenCards(newHiddenCards);
   };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      window.location.reload();
+    },  10000);
+  
+    // تنظيف الموارد عند تفكيك المكون
+    return () => clearInterval(intervalId);
+  }, []);
+  
   return (
     <div className="p-4 w-100">
       <div className="p-4 border border-2 rounded">

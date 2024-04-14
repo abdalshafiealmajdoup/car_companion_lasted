@@ -72,7 +72,7 @@ function VerifyOtpCu() {
       <div className="container position-relative">
         <div className="row justify-content-center">
           <div className="col-xl-7 col-lg-9 text-center">
-            <h3>تحقق من OTP</h3>
+            <h3> الرجاء إدخال رمز التحقق OTP</h3>
           </div>
         </div>
         <div className="register-style">
@@ -90,7 +90,7 @@ function VerifyOtpCu() {
                   />
                   {errors.OTP && <div style={{ color: 'red', fontSize: 'small' }}>{translateError(errors.OTP[0])}</div>}
                 </div>
-                <input type="submit" className="btnRegister btnr" value="تحقق" />
+                <input type="submit" className="btnRegister btnr" value="تاكيد الطلب " />
               </form>
             </div>
           </div>

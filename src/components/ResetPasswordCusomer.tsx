@@ -9,7 +9,7 @@ const errorTranslations: Record<string, string> = {
   "The Confirm Password field must match the Password field.": "يجب أن يتطابق حقل تأكيد كلمة المرور مع حقل كلمة المرور."
 };
 const placeholders = {
-  Password: 'كلمة المرور',
+  new_password: 'كلمة المرور',
   ConfirmPassword: 'تأكيد كلمة المرور'
 };
 const translateError = (error: string) => errorTranslations[error] || error;
@@ -82,7 +82,7 @@ function ResetPasswordCusomer() {
                 {Object.keys(formData).map((key) => (
                   <div key={key} className="form-group mb-3 inpo">
                     <input
-                      type={key === 'Password' || key === 'ConfirmPassword' ? 'password' : 'text'}
+                      type={key === 'Password' || key === 'ConfirmPassword' ? 'password' : 'Password'}
                       name={key}
                       value={formData[key as keyof typeof formData]}
                       onChange={handleChange}
